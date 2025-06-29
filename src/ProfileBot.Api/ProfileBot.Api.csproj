@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<UserSecretsId>e8a24df6-d366-434d-a1b1-1d8f8c580014</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="12.5.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+		<PackageReference Include="NetCord" Version="1.0.0-alpha.389" />
+		<PackageReference Include="NetCord.Hosting" Version="1.0.0-alpha.389" />
+		<PackageReference Include="NetCord.Hosting.Services" Version="1.0.0-alpha.389" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\ProfileBot.Application\ProfileBot.Application.csproj" />
+	</ItemGroup>
+
+</Project>

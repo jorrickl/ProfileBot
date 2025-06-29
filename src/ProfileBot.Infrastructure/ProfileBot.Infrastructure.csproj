@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.6" />
+		<PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="9.0.6" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\ProfileBot.Domain\ProfileBot.Domain.csproj" />
+	</ItemGroup>
+</Project>

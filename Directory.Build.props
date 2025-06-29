@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+    </PropertyGroup>
+
+  <Import Project="src/Directory.Build.Source.Props" Condition="!$(MSBuildProjectName.EndsWith('Tests'))" />
+  <Import Project="tests/Directory.Build.Tests.Props" Condition="$(MSBuildProjectName.EndsWith('Tests'))" />
+</Project>

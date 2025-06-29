@@ -21,7 +21,7 @@ namespace ProfileBot.Application.Activities.Get
 
             return Result.Success(new GetActivitiesResult()
             {
-                Message = formattedActivities
+                Activities = formattedActivities
             });
         }
     }

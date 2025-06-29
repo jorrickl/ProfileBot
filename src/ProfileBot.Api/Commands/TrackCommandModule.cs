@@ -29,8 +29,9 @@ namespace ProfileBot.Api.Commands
 
             return result switch
             {
-                { IsSuccess: true } => result.Value.Message,
-                _ when result.IsNotFound() => result.Errors.Single(),
+                { IsSuccess: true } => result.Value.Activities,
+                _ when result.IsInvalid() => string.Join(Environment.NewLine, result.ValidationErrors.Select(x => x.ErrorMessage)),
+                _ when result.IsNotFound() => result.Errors.First(),
                 _ => "Something went wrong. Try again."
             };
         }

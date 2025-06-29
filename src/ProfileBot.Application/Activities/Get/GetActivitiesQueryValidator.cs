@@ -2,7 +2,7 @@
 
 namespace ProfileBot.Application.Activities.Get
 {
-    internal class GetActivitiesQueryValidator : AbstractValidator<GetActivitiesQuery>
+    public class GetActivitiesQueryValidator : AbstractValidator<GetActivitiesQuery>
     {
         public GetActivitiesQueryValidator()
         {

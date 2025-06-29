@@ -2,6 +2,6 @@
 {
     public sealed record GetActivitiesResult()
     {
-        public required string Message { get; init; }
+        public required string Activities { get; init; }
     }
 }

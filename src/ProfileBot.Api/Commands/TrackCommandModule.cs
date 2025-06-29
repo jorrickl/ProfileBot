@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using NetCord.Services.ApplicationCommands;
+using ProfileBot.Api.DiscordUi;
 using ProfileBot.Application.Activities.Get;
 
 namespace ProfileBot.Api.Commands
@@ -10,7 +11,7 @@ namespace ProfileBot.Api.Commands
     {
         [SubSlashCommand("get", "Returns the latest activities for a specific player")]
         public async Task<string> GetActivities(
-            [SlashCommandParameter(Name = "rsn", Description = "Player display name", MinLength = 1, MaxLength = 12)] string user)
+            [SlashCommandParameter(AutocompleteProviderType = typeof(TrackRsnAutocompleteHandler), MinLength = 1, MaxLength = 12)] string rsn)
         {
             var guildId = Context.Guild?.Id;
             if (!guildId.HasValue)
@@ -20,7 +21,7 @@ namespace ProfileBot.Api.Commands
 
             var query = new GetActivitiesQuery
             {
-                Username = user,
+                Username = rsn,
                 GuildId = guildId.Value
             };
 

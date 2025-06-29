@@ -11,12 +11,14 @@ builder.Services
     .AddApplicationServices()
     .AddInfrastructureServices(builder.Configuration);
 
+//NetCord
 builder.Services
     .AddDiscordGateway()
     .AddApplicationCommands();
 
 var host = builder.Build();
 
+//NetCord
 host.UseGatewayEventHandlers()
     .AddModules(typeof(Program).Assembly);
 

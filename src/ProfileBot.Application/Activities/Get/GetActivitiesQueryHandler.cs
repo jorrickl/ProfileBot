@@ -5,12 +5,12 @@ using ProfileBot.SharedKernel;
 
 namespace ProfileBot.Application.Activities.Get
 {
-    public sealed class GetActivitiesQueryHandler(IProfileAdapter profileAdapter, IActivityFormatter activityFormatter)
+    public sealed class GetActivitiesQueryHandler(IProfileClient profileClient, IActivityFormatter activityFormatter)
         : IQueryHandler<GetActivitiesQuery, Result<GetActivitiesResult>>
     {
         public async Task<Result<GetActivitiesResult>> Handle(GetActivitiesQuery request, CancellationToken cancellationToken)
         {
-            var profile = await profileAdapter.GetProfileAsync(request.Username).ConfigureAwait(false);
+            var profile = await profileClient.GetProfileAsync(request.Username).ConfigureAwait(false);
 
             if (profile is null)
             {

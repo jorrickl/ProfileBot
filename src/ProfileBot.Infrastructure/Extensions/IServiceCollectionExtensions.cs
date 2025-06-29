@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using ProfileBot.Infrastructure.Adapters;
 using ProfileBot.Infrastructure.Clients;
 using ProfileBot.Infrastructure.Configuration;
 using ProfileBot.Infrastructure.Interfaces;
@@ -18,7 +17,6 @@ namespace ProfileBot.Infrastructure.Extensions
 
         private static IServiceCollection ConfigureProfileServices(this IServiceCollection services)
         {
-            services.AddTransient<IProfileAdapter, ProfileAdapter>();
             services.AddHttpClient<IProfileClient, ProfileClient>((sp, client) =>
             {
                 var options = sp.GetRequiredService<IOptions<RuneScapeOptions>>().Value;

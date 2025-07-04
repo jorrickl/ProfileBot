@@ -1,10 +1,10 @@
 ﻿namespace ProfileBot.Domain.Runescape
 {
-    public class Activity
+    public record Activity
     {
-        public required string Date { get; set; }
-        public required string Details { get; set; }
-        public required string Text { get; set; }
+        public string Date { get; init; }
+        public string Details { get; init; }
+        public string Text { get; init; }
 
         public Activity()
         {

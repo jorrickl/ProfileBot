@@ -1,4 +1,8 @@
-﻿using ProfileBot.Application.Activities.Formatters;
+﻿using AutoFixture;
+using AutoFixture.AutoMoq;
+using Moq;
+using ProfileBot.Application.Interfaces;
+using ProfileBot.Application.Profiles.Formatting;
 using ProfileBot.Domain.Runescape;
 using Shouldly;
 
@@ -8,6 +12,7 @@ namespace ProfileBot.Application.UnitTests.Activities.Formatters
     public class ActivityFormatterTests
     {
         private ActivityFormatter _formatter = null!;
+        private Mock<IEnumerable<IActivityMatcher>> _matchersMock = null!;
         private Profile _baseProfile = null!;
         private string _date1 = null!;
         private string _date2 = null!;
@@ -17,7 +22,10 @@ namespace ProfileBot.Application.UnitTests.Activities.Formatters
         [TestInitialize]
         public void Setup()
         {
-            _formatter = new ActivityFormatter();
+            var fixture = new Fixture().Customize(new AutoMoqCustomization());
+            _matchersMock = fixture.Freeze<Mock<IEnumerable<IActivityMatcher>>>();
+            _formatter = fixture.Create<ActivityFormatter>();
+
             var dt1 = new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc);
             var dt2 = new DateTime(2024, 1, 2, 15, 30, 0, DateTimeKind.Utc);
             _date1 = dt1.ToString("dd-MMM-yyyy HH:mmZ");

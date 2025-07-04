@@ -1,6 +1,6 @@
 ﻿using ProfileBot.Domain.Runescape;
 
-namespace ProfileBot.Application.Activities.Get
+namespace ProfileBot.Application.Profiles.Get
 {
     public sealed record GetProfileResult
     {

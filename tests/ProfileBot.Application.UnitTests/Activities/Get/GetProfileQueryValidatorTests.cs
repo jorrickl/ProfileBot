@@ -1,5 +1,5 @@
 ﻿using FluentValidation.TestHelper;
-using ProfileBot.Application.Activities.Get;
+using ProfileBot.Application.Profiles.Get;
 
 namespace ProfileBot.Application.UnitTests.Activities.Get
 {

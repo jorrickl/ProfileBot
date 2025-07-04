@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ProfileBot.Application.Activities.Get
+namespace ProfileBot.Application.Profiles.Get
 {
     public class GetProfileQueryValidator : AbstractValidator<GetProfileQuery>
     {

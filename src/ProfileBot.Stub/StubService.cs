@@ -5,7 +5,7 @@ using WireMock.Logging;
 using WireMock.Server;
 using WireMock.Settings;
 
-namespace ProfileBot.DevelopmentHost
+namespace ProfileBot.Stub
 {
     internal class StubService(ILogger<StubService> logger) : BackgroundService
     {

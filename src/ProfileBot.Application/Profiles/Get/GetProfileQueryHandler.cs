@@ -2,13 +2,14 @@
 using ProfileBot.Infrastructure.Interfaces;
 using ProfileBot.SharedKernel;
 
-namespace ProfileBot.Application.Activities.Get
+namespace ProfileBot.Application.Profiles.Get
 {
     public sealed class GetProfileQueryHandler(IProfileClient profileClient)
         : IQueryHandler<GetProfileQuery, Result<GetProfileResult>>
     {
         public async Task<Result<GetProfileResult>> Handle(GetProfileQuery request, CancellationToken cancellationToken)
         {
+            //TODO: Check if user is tracked for request.GuildId
             var profile = await profileClient.GetProfileAsync(request.Username).ConfigureAwait(false);
 
             if (profile is null)

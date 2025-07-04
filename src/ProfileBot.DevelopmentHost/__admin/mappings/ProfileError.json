@@ -1,0 +1,50 @@
+[
+  {
+    "Priority": 2,
+    "Request": {
+      "Path": {
+        "Matchers": [
+          {
+            "Name": "ExactMatcher",
+            "Pattern": "/runemetrics/profile/profile",
+            "IgnoreCase": true
+          }
+        ]
+      },
+      "Methods": [
+        "GET"
+      ],
+      "Params": [
+        {
+          "Name": "user",
+          "Matchers": [
+            {
+              "Name": "WildcardMatcher",
+              "Pattern": "error*",
+              "IgnoreCase": true
+            }
+          ]
+        },
+        {
+          "Name": "activities",
+          "Matchers": [
+            {
+              "Name": "WildcardMatcher",
+              "Pattern": "*",
+              "IgnoreCase": true
+            }
+          ]
+        }
+      ]
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Content-Type": "application/json;charset=ISO-8859-1"
+      },
+      "BodyAsFile": "__admin\\files\\ProfileError.json",
+      "UseTransformer": true,
+      "UseTransformerForBodyAsFile": true
+    }
+  }
+]

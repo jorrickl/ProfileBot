@@ -5,10 +5,11 @@ using MediatR;
 
 namespace ProfileBot.SharedKernel.Behaviors
 {
+    //TODO: Try to validate the request or get rid of the Result pattern
     public sealed class ResultValidatingPipeline<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators)
         : IPipelineBehavior<TRequest, TResponse>
         where TRequest : notnull
-        where TResponse : IResult
+        where TResponse : class, IResult
     {
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
@@ -30,27 +31,27 @@ namespace ProfileBot.SharedKernel.Behaviors
             if (errors.Any())
             {
                 // Dynamically create a Result<T> with errors
-                var resultType = typeof(TResponse).GetGenericArguments().FirstOrDefault();
-                if (resultType != null)
-                {
-                    var invalidObject = CreateInvalidResult(resultType, errors);
-                    if (invalidObject is not TResponse invalidResult)
-                    {
-                        throw new InvalidOperationException();
-                    }
-                    return invalidResult;
-                }
+                return CreateInvalidResult(errors);
             }
 
             return await next(cancellationToken).ConfigureAwait(false);
         }
-        private object? CreateInvalidResult(Type resultType, IEnumerable<ValidationError> parameters)
-        {
-            // Use reflection to create a Result<T>.Invalid instance
-            var genericResultType = typeof(Result<>).MakeGenericType(resultType);
-            var invalidMethod = genericResultType.GetMethod(nameof(Result.Invalid), [parameters.GetType()]);
 
-            return invalidMethod?.Invoke(null, [parameters]);
+        private TResponse CreateInvalidResult(IEnumerable<ValidationError> parameters)
+        {
+            var resultType = typeof(TResponse).GetGenericArguments().FirstOrDefault()
+                          ?? throw new InvalidOperationException();
+
+            var genericResultType = typeof(Result<>).MakeGenericType(resultType);
+            var resultInvalidMethod = genericResultType.GetMethod(nameof(Result.Invalid), [parameters.GetType()]);
+
+            var untypedResult = resultInvalidMethod?.Invoke(null, [parameters]);
+            if (untypedResult is not TResponse result)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return result;
         }
 
     }

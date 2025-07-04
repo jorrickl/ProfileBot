@@ -7,11 +7,11 @@ using ProfileBot.Application.Activities.Get;
 namespace ProfileBot.Api.Commands
 {
     [SlashCommand("track", "Track RuneMetrics profiles")]
-    public class TrackCommandModule(IMediator mediator) : ApplicationCommandModule<ApplicationCommandContext>
+    internal class TrackCommandModule(IMediator mediator) : ApplicationCommandModule<ApplicationCommandContext>
     {
         [SubSlashCommand("get", "Returns the latest activities for a specific player")]
         public async Task<string> GetActivities(
-            [SlashCommandParameter(AutocompleteProviderType = typeof(TrackRsnAutocompleteHandler), MinLength = 1, MaxLength = 12)] string rsn)
+            [SlashCommandParameter(AutocompleteProviderType = typeof(ProfileNameAutocompleteHandler), MinLength = 1, MaxLength = 12)] string rsn)
         {
             var guildId = Context.Guild?.Id;
             if (!guildId.HasValue)

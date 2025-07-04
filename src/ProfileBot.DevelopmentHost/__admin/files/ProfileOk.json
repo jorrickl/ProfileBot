@@ -1,0 +1,292 @@
+{
+  "magic": 69094652,
+  "questsstarted": 0,
+  "totalskill": 3095,
+  "questscomplete": 351,
+  "questsnotstarted": 0,
+  "totalxp": 2293103455,
+  "ranged": 161914666,
+  "activities": [
+    {
+      "date": "20-Jun-2025 13:19",
+      "details": "I killed 8 Vindictas, all heavily armoured dragon riders.",
+      "text": "I killed 8 Vindictas."
+    },
+    {
+      "date": "20-Jun-2025 12:23",
+      "details": "While skilling, I found Gemi, the Crafting pet.",
+      "text": "I found Gemi, the Crafting pet."
+    },
+    {
+      "date": "20-Jun-2025 07:40",
+      "details": "I now have at least 40000000 experience points in the Crafting skill.",
+      "text": "40000000XP in Crafting"
+    },
+    {
+      "date": "20-Jun-2025 07:40",
+      "details": "I killed 5 devastating creatures of Zaros, all named Nex.",
+      "text": "I killed 5 Nexes."
+    },
+    {
+      "date": "14-Jun-2025 17:51",
+      "details": "I killed 7 Vindictas, all heavily armoured dragon riders.",
+      "text": "I killed 7 Vindictas."
+    },
+    {
+      "date": "09-Jun-2025 11:58",
+      "details": "I now have at least 34000000 experience points in the Cooking skill.",
+      "text": "34000000XP in Cooking"
+    },
+    {
+      "date": "01-Jun-2025 07:20",
+      "details": "I now have at least 32000000 experience points in the Cooking skill.",
+      "text": "32000000XP in Cooking"
+    },
+    {
+      "date": "01-Jun-2025 07:14",
+      "details": "I now have at least 82000000 experience points in the Fishing skill.",
+      "text": "82000000XP in Fishing"
+    },
+    {
+      "date": "17-May-2025 08:46",
+      "details": "I now have at least 108000000 experience points in the Thieving skill.",
+      "text": "108000000XP in Thieving"
+    },
+    {
+      "date": "17-May-2025 08:26",
+      "details": "I found a crystal triskelion fragment.",
+      "text": "I found a crystal triskelion fragment."
+    },
+    {
+      "date": "12-May-2025 18:41",
+      "details": "I now have at least 122000000 experience points in the Invention skill.",
+      "text": "122000000XP in Invention"
+    },
+    {
+      "date": "19-Apr-2025 14:30",
+      "details": "I helped reunite a lost duckling with her family, and learnt the philosophy of the duck along the way.",
+      "text": "Quest complete: Duck Quest"
+    },
+    {
+      "date": "07-Apr-2025 17:24",
+      "details": "I helped Leela overthrow her father and take control of Menaphos.",
+      "text": "Quest complete: Pharaoh's Folly"
+    },
+    {
+      "date": "08-Mar-2025 15:32",
+      "details": "I killed 7 Vindictas, all heavily armoured dragon riders.",
+      "text": "I killed 7 Vindictas."
+    },
+    {
+      "date": "17-Feb-2025 19:54",
+      "details": "I defeated the Queen Black Dragon 1 time, returning her to a temporary slumber.",
+      "text": "I defeated the Queen Black Dragon 1 time."
+    },
+    {
+      "date": "17-Feb-2025 19:51",
+      "details": "I killed  TzTok-Jad, and can now claim my fire cape.",
+      "text": "I killed  TzTok-Jad."
+    },
+    {
+      "date": "17-Feb-2025 19:38",
+      "details": "I now have at least 110000000 experience points in the Necromancy skill.",
+      "text": "110000000XP in Necromancy"
+    },
+    {
+      "date": "17-Feb-2025 19:38",
+      "details": "I killed 3 Ancient experimental dinosaurs: Rex Matriarchs.",
+      "text": "I killed 3 Rex Matriarchs."
+    },
+    {
+      "date": "17-Feb-2025 19:04",
+      "details": "After killing a Pthentraken, it dropped a Savage spear cap.",
+      "text": "I found a Savage spear cap"
+    },
+    {
+      "date": "17-Feb-2025 19:04",
+      "details": "I killed 4 Ancient experimental dinosaurs: Rex Matriarchs.",
+      "text": "I killed 4 Rex Matriarchs."
+    }
+  ],
+  "skillvalues": [
+    {
+      "level": 99,
+      "xp": 1619146666,
+      "rank": 37065,
+      "id": 3
+    },
+    {
+      "level": 120,
+      "xp": 1407325909,
+      "rank": 34257,
+      "id": 27
+    },
+    {
+      "level": 120,
+      "xp": 1303811514,
+      "rank": 26156,
+      "id": 24
+    },
+    {
+      "level": 99,
+      "xp": 1233691774,
+      "rank": 32935,
+      "id": 1
+    },
+    {
+      "level": 99,
+      "xp": 1229340945,
+      "rank": 28798,
+      "id": 4
+    },
+    {
+      "level": 99,
+      "xp": 1224928396,
+      "rank": 33305,
+      "id": 6
+    },
+    {
+      "level": 120,
+      "xp": 1224663218,
+      "rank": 58577,
+      "id": 26
+    },
+    {
+      "level": 120,
+      "xp": 1159680299,
+      "rank": 42990,
+      "id": 18
+    },
+    {
+      "level": 120,
+      "xp": 1149516065,
+      "rank": 51689,
+      "id": 19
+    },
+    {
+      "level": 120,
+      "xp": 1116428318,
+      "rank": 46205,
+      "id": 15
+    },
+    {
+      "level": 120,
+      "xp": 1102153781,
+      "rank": 39645,
+      "id": 28
+    },
+    {
+      "level": 99,
+      "xp": 1083858117,
+      "rank": 24375,
+      "id": 17
+    },
+    {
+      "level": 99,
+      "xp": 1060242322,
+      "rank": 23362,
+      "id": 2
+    },
+    {
+      "level": 99,
+      "xp": 1044163741,
+      "rank": 29282,
+      "id": 0
+    },
+    {
+      "level": 99,
+      "xp": 822679444,
+      "rank": 32990,
+      "id": 10
+    },
+    {
+      "level": 99,
+      "xp": 690946525,
+      "rank": 29626,
+      "id": 5
+    },
+    {
+      "level": 110,
+      "xp": 417152955,
+      "rank": 45651,
+      "id": 8
+    },
+    {
+      "level": 110,
+      "xp": 410026537,
+      "rank": 63817,
+      "id": 14
+    },
+    {
+      "level": 110,
+      "xp": 404457041,
+      "rank": 39528,
+      "id": 12
+    },
+    {
+      "level": 110,
+      "xp": 397140877,
+      "rank": 50042,
+      "id": 13
+    },
+    {
+      "level": 110,
+      "xp": 391923592,
+      "rank": 45304,
+      "id": 20
+    },
+    {
+      "level": 110,
+      "xp": 389760867,
+      "rank": 46621,
+      "id": 9
+    },
+    {
+      "level": 110,
+      "xp": 389376818,
+      "rank": 54110,
+      "id": 11
+    },
+    {
+      "level": 99,
+      "xp": 388607296,
+      "rank": 39853,
+      "id": 25
+    },
+    {
+      "level": 99,
+      "xp": 350327512,
+      "rank": 39743,
+      "id": 7
+    },
+    {
+      "level": 99,
+      "xp": 283070189,
+      "rank": 46000,
+      "id": 22
+    },
+    {
+      "level": 99,
+      "xp": 239368718,
+      "rank": 66186,
+      "id": 21
+    },
+    {
+      "level": 99,
+      "xp": 230818148,
+      "rank": 74107,
+      "id": 16
+    },
+    {
+      "level": 99,
+      "xp": 166427120,
+      "rank": 72592,
+      "id": 23
+    }
+  ],
+  "name": "{{request.query.user}}",
+  "rank": "22,818",
+  "melee": 1208236316,
+  "combatlevel": 152,
+  "loggedIn": "false"
+}

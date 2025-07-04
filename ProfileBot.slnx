@@ -7,7 +7,7 @@
   <Folder Name="/src/">
     <Project Path="src/ProfileBot.Api/ProfileBot.Api.csproj" />
     <Project Path="src/ProfileBot.Application/ProfileBot.Application.csproj" Id="f5d2e9e3-bf71-45ce-8e39-54588e5337dc" />
-    <Project Path="src/ProfileBot.DevelopmentHost/ProfileBot.Stub.csproj" />
+    <Project Path="src/ProfileBot.Stub/ProfileBot.Stub.csproj" />
     <Project Path="src/ProfileBot.Domain/ProfileBot.Domain.csproj" Id="83b44ea6-d14d-4eaf-90e7-4c05c0d79765" />
     <Project Path="src/ProfileBot.Infrastructure/ProfileBot.Infrastructure.csproj" Id="9d97403e-9b72-4c01-b4c6-ee4cd62916a9" />
     <Project Path="src/ProfileBot.SharedKernel/ProfileBot.SharedKernel.csproj" Id="247cdbe9-6ea0-47f3-8657-7ba789d784b8" />

@@ -1,9 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="9.0.6" />
-		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.6" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\Runescape.Domain\Runescape.Domain.csproj" />
-	</ItemGroup>
-</Project>

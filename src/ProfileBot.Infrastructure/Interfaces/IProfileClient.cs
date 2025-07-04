@@ -1,9 +1,10 @@
-﻿using ProfileBot.Domain.Runescape;
+﻿using Ardalis.Result;
+using ProfileBot.Domain.Runescape;
 
 namespace ProfileBot.Infrastructure.Interfaces
 {
     public interface IProfileClient
     {
-        Task<Profile?> GetProfileAsync(string user, int activities = 20);
+        Task<Result<Profile>> GetProfileAsync(string user, int activities = 20);
     }
 }

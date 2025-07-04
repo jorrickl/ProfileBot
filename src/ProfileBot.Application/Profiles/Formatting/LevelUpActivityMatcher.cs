@@ -33,7 +33,7 @@ namespace ProfileBot.Application.Profiles.Formatting
 
             if (short.TryParse(captureLevel, out var level) && _levelWhitelist.Contains(level))
             {
-                result = string.Format(Output, profile.Name, captureLevel, captureSkill);
+                result = string.Format(Output, profile.Name, captureSkill, captureLevel);
 
                 if (level is 99 or 120)
                 {

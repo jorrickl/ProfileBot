@@ -21,25 +21,17 @@ namespace ProfileBot.Application.UnitTests.Profiles.Formatting
         [TestMethod]
         public void TryMatch_WhenPatternMatches_ReturnsTrueAndSetsResult()
         {
-            var matcher = new ActivityMatcher(_pattern, "output");
+            var output = "output";
+            var matcher = new ActivityMatcher(_pattern, output);
             var matched = matcher.TryMatch(_profile, _activity, out var result);
             matched.ShouldBeTrue();
-            result.ShouldBe("Matched: Level up: Magic");
+            result.ShouldBe(output);
         }
 
         [TestMethod]
         public void TryMatch_WhenPatternDoesNotMatch_ReturnsFalseAndNullResult()
         {
-            var matcher = new ActivityMatcher("Achievement: (\\w+)", "output");
-            var matched = matcher.TryMatch(_profile, _activity, out var result);
-            matched.ShouldBeFalse();
-            result.ShouldBeNull();
-        }
-
-        [TestMethod]
-        public void TryMatch_WhenOnMatchSuccessReturnsFalse_ReturnsFalse()
-        {
-            var matcher = new ActivityMatcher(_pattern, "output");
+            var matcher = new ActivityMatcher("Nonmatching pattern", "output");
             var matched = matcher.TryMatch(_profile, _activity, out var result);
             matched.ShouldBeFalse();
             result.ShouldBeNull();

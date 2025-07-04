@@ -30,7 +30,7 @@ namespace ProfileBot.Application.Profiles.Formatting
         protected virtual bool OnMatchSuccess(Profile profile, Activity activity, Match match, out string? result)
         {
             result = Output;
-            return false;
+            return true;
         }
     }
 }

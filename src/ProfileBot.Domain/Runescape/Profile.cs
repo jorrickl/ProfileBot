@@ -9,21 +9,12 @@
         public int QuestsNotStarted { get; set; }
         public long TotalXp { get; set; }
         public long Ranged { get; set; }
-        public required Activity[] Activities { get; set; }
-        public required Skillvalue[] SkillValues { get; set; }
-        public required string Name { get; set; }
-        public required string Rank { get; set; }
+        public Activity[] Activities { get; set; } = [];
+        public Skillvalue[] SkillValues { get; set; } = [];
+        public string Name { get; set; } = string.Empty;
+        public string Rank { get; set; } = string.Empty;
         public long Melee { get; set; }
         public int CombatLevel { get; set; }
-        public required string LoggedIn { get; set; }
-
-        public Profile()
-        {
-            Activities = [];
-            SkillValues = [];
-            Name = string.Empty;
-            Rank = string.Empty;
-            LoggedIn = string.Empty;
-        }
+        public string LoggedIn { get; set; } = string.Empty;
     }
 }

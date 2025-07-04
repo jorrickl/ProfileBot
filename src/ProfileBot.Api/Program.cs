@@ -18,10 +18,10 @@ builder.Services
 
 var host = builder.Build();
 
-//NetCord
-host.UseGatewayEventHandlers()
-    .AddModules(typeof(Program).Assembly);
 
+//NetCord
+host.AddModules(typeof(Program).Assembly)
+    .UseGatewayEventHandlers();
 
 
 await host.RunAsync();

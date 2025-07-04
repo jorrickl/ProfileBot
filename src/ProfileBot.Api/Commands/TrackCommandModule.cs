@@ -3,11 +3,12 @@ using MediatR;
 using NetCord.Services.ApplicationCommands;
 using ProfileBot.Api.DiscordUi;
 using ProfileBot.Application.Activities.Get;
+using ProfileBot.Application.Interfaces;
 
 namespace ProfileBot.Api.Commands
 {
     [SlashCommand("track", "Track RuneMetrics profiles")]
-    internal class TrackCommandModule(IMediator mediator) : ApplicationCommandModule<ApplicationCommandContext>
+    public class TrackCommandModule(IMediator mediator, IActivityFormatter activityFormatter) : ApplicationCommandModule<ApplicationCommandContext>
     {
         [SubSlashCommand("get", "Returns the latest activities for a specific player")]
         public async Task<string> GetActivities(
@@ -16,24 +17,35 @@ namespace ProfileBot.Api.Commands
             var guildId = Context.Guild?.Id;
             if (!guildId.HasValue)
             {
-                return "Could not obtain the server's ID.";
+                throw new InvalidOperationException("Could not obtain the server ID.");
             }
 
-            var query = new GetActivitiesQuery
+            var query = new GetProfileQuery
             {
                 Username = rsn,
                 GuildId = guildId.Value
             };
 
-            var result = await mediator.Send(query).ConfigureAwait(false);
+            var result = await mediator.Send(query).ConfigureAwait(false)
+                      ?? throw new InvalidOperationException();
+
+            if (result.IsSuccess && activityFormatter.TryFormatActivities(result.Value.UserProfile, out var formattedResult))
+            {
+                return formattedResult!;
+            }
 
             return result switch
             {
-                { IsSuccess: true } => result.Value.Activities,
-                _ when result.IsInvalid() => string.Join(Environment.NewLine, result.ValidationErrors.Select(x => x.ErrorMessage)),
-                _ when result.IsNotFound() => result.Errors.First(),
+                _ when result.IsInvalid() => FormatErrors(result.ValidationErrors.Select(x => x.ErrorMessage)),
+                _ when result.IsNotFound() => FormatErrors(result.Errors),
                 _ => "Something went wrong. Try again."
             };
+        }
+
+
+        private static string FormatErrors(IEnumerable<string> errors)
+        {
+            return string.Join(Environment.NewLine, errors);
         }
     }
 }

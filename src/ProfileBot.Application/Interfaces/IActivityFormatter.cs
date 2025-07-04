@@ -4,6 +4,6 @@ namespace ProfileBot.Application.Interfaces
 {
     public interface IActivityFormatter
     {
-        string FormatActivities(Profile profile);
+        bool TryFormatActivities(Profile profile, out string? result);
     }
 }

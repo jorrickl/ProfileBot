@@ -11,11 +11,11 @@ namespace ProfileBot.Application.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddValidatorsFromAssemblyContaining<GetActivitiesQueryValidator>(ServiceLifetime.Transient);
+            services.AddValidatorsFromAssemblyContaining<GetProfileQueryValidator>(ServiceLifetime.Transient);
 
             services.AddMediatR(cfg =>
             {
-                cfg.RegisterServicesFromAssemblyContaining<GetActivitiesQueryHandler>();
+                cfg.RegisterServicesFromAssemblyContaining<GetProfileQueryHandler>();
                 cfg.RegisterServicesFromAssemblyContaining(typeof(ResultValidatingPipeline<,>));
                 cfg.AddOpenBehavior(typeof(ResultValidatingPipeline<,>));
             });

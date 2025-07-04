@@ -3,17 +3,30 @@ using ProfileBot.Domain.Runescape;
 
 namespace ProfileBot.Application.Activities.Formatters
 {
-    internal class ActivityFormatter : IActivityFormatter
+    public class ActivityFormatter : IActivityFormatter
     {
-        public string FormatActivities(Profile profile)
+        public bool TryFormatActivities(Profile profile, out string? result)
         {
-            var activities = from x in profile.Activities
-                             let unixTimestamp = DateTimeOffset.Parse(x.Date).ToUnixTimeSeconds()
-                             let formattedDate = $"<t:{unixTimestamp}:f>"
-                             orderby unixTimestamp descending
-                             select $"- [{formattedDate}] **{profile.Name}**: {x.Text}";
+            result = null!;
+            if (profile.Activities.Length == 0)
+            {
+                return false;
+            }
 
-            return string.Join(Environment.NewLine, activities);
+            try
+            {
+                var activities = from x in profile.Activities
+                                 let unixTimestamp = DateTimeOffset.Parse(x.Date).ToUnixTimeSeconds()
+                                 let formattedDate = $"<t:{unixTimestamp}:f>"
+                                 orderby unixTimestamp ascending
+                                 select $"- [{formattedDate}] **{profile.Name}**: {x.Text}";
+                result = string.Join(Environment.NewLine, activities);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
         }
     }
 }

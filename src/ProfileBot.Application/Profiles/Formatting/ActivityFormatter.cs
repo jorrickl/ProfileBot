@@ -40,9 +40,9 @@ namespace ProfileBot.Application.Profiles.Formatting
                              let unixTimestamp = DateTimeOffset.Parse(f.Key.Date).ToUnixTimeSeconds()
                              let formattedDate = $"<t:{unixTimestamp}:f>"
                              orderby unixTimestamp ascending
-                             select $"- [{formattedDate}] ${f.Value}";
+                             select $"- [{formattedDate}] {f.Value}";
 
-            return string.Join(Environment.NewLine, filtered);
+            return string.Join(Environment.NewLine, activities);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace ProfileBot.Application.Extensions
                 return
                 [
                     factory.Create<LevelUpActivityMatcher>(@"I levelled my (.*) skill, I am now level (\d.*)\.", "**{0}** just leveled **{1}** to {2}"),
-                    factory.Create<XpMilestoneActivityMatcher>("@\"(\\d+)XP in ([A-Za-z]+)", "**{0}** got **{1}m** XP in **{2}** :tada:")
+                    factory.Create<XpMilestoneActivityMatcher>(@"(\d+)XP in ([A-Za-z]+)", "**{0}** got **{1}m** XP in **{2}** :tada:")
                 ];
             });
 

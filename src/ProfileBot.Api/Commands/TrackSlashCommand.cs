@@ -22,17 +22,19 @@ namespace ProfileBot.Api.Commands
             var profile = await mediator.Send(query).ConfigureAwait(false)
                        ?? throw new InvalidOperationException();
 
-            if (profile.IsSuccess && activityFormatter.TryFormatActivities(profile.Value.UserProfile, out var formattedResult))
+            if (profile.IsSuccess && activityFormatter.TryFormatActivities(profile.Value.UserProfile, out var formattedResponse))
             {
-                return formattedResult!;
+                return formattedResponse!;
             }
 
-            return profile switch
+            var errorResponse = profile switch
             {
                 _ when profile.IsInvalid() => FormatErrors(profile.ValidationErrors.Select(x => x.ErrorMessage)),
                 _ when profile.IsNotFound() => FormatErrors(profile.Errors),
                 _ => "Something went wrong. Try again later."
             };
+
+            return errorResponse;
         }
 
         private static string FormatErrors(IEnumerable<string> errors)

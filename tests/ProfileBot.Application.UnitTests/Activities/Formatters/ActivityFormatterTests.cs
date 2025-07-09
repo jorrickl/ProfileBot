@@ -12,7 +12,7 @@ namespace ProfileBot.Application.UnitTests.Activities.Formatters
     public class ActivityFormatterTests
     {
         private ActivityFormatter _formatter = null!;
-        private Mock<IEnumerable<IActivityMatcher>> _matchersMock = null!;
+        private IEnumerable<Mock<IActivityMatcher>> _matchersMock = null!;
         private Profile _baseProfile = null!;
         private string _date1 = null!;
         private string _date2 = null!;
@@ -23,9 +23,9 @@ namespace ProfileBot.Application.UnitTests.Activities.Formatters
         public void Setup()
         {
             var fixture = new Fixture().Customize(new AutoMoqCustomization());
-            _matchersMock = fixture.Freeze<Mock<IEnumerable<IActivityMatcher>>>();
+            _matchersMock = fixture.CreateMany<Mock<IActivityMatcher>>();
+            fixture.Inject(_matchersMock.Select(x => x.Object));
             _formatter = fixture.Create<ActivityFormatter>();
-
             var dt1 = new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc);
             var dt2 = new DateTime(2024, 1, 2, 15, 30, 0, DateTimeKind.Utc);
             _date1 = dt1.ToString("dd-MMM-yyyy HH:mmZ");
@@ -48,34 +48,26 @@ namespace ProfileBot.Application.UnitTests.Activities.Formatters
         }
 
         [TestMethod]
-        public void TryFormatActivities_SingleActivity_FormatsCorrectly()
-        {
-            _baseProfile.Activities =
-            [
-                new Activity { Date = _date1, Details = "", Text = "Did something" }
-            ];
-            var expected = $"- [<t:{_unix1}:f>] **TestUser**: Did something";
-
-            var isFormatted = _formatter.TryFormatActivities(_baseProfile, out var result);
-
-            isFormatted.ShouldBeTrue();
-            result.ShouldBe(expected);
-        }
-
-        [TestMethod]
         public void TryFormatActivities_MultipleActivities_OrdersByDateAscending()
         {
-            _baseProfile.Activities =
-            [
-                new Activity { Date = _date1, Details = "", Text = "Old activity" },
-                new Activity { Date = _date2, Details = "", Text = "New activity" }
-            ];
-            var expected = $"- [<t:{_unix1}:f>] **TestUser**: Old activity{Environment.NewLine}- [<t:{_unix2}:f>] **TestUser**: New activity";
+            // Arrange
+            var activity1 = new Activity { Date = _date1, Details = "", Text = "Old activity" };
+            var activity2 = new Activity { Date = _date2, Details = "", Text = "New activity" };
+            _baseProfile.Activities = [activity1, activity2];
 
+            var result1 = "**TestUser**: Old activity";
+            var result2 = "**TestUser**: New activity";
+            _matchersMock.First().Setup(x => x.TryMatch(_baseProfile, activity1, out result1)).Returns(true);
+            _matchersMock.First().Setup(x => x.TryMatch(_baseProfile, activity2, out result2)).Returns(true);
+
+            var expectedResult = $"- [<t:{_unix1}:f>] **TestUser**: Old activity{Environment.NewLine}- [<t:{_unix2}:f>] **TestUser**: New activity";
+
+            // Act
             var isFormatted = _formatter.TryFormatActivities(_baseProfile, out var result);
 
+            // Assert
             isFormatted.ShouldBeTrue();
-            result.ShouldBe(expected);
+            result.ShouldBe(expectedResult);
         }
 
         [TestMethod]

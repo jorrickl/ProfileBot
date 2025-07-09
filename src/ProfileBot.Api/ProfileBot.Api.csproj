@@ -5,8 +5,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MediatR" Version="12.5.0" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+		<PackageReference Include="MediatR" Version="13.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.7" />
 		<PackageReference Include="NetCord" Version="1.0.0-alpha.389" />
 		<PackageReference Include="NetCord.Hosting" Version="1.0.0-alpha.389" />
 		<PackageReference Include="NetCord.Hosting.Services" Version="1.0.0-alpha.389" />

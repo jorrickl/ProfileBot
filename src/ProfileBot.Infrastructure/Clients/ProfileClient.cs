@@ -20,7 +20,7 @@ namespace ProfileBot.Infrastructure.Clients
 
             var queryParameters = new Dictionary<string, string?>()
             {
-                {  "user", Uri.EscapeDataString(user) },
+                {  "user", user },
                 {  "activities", activities.ToString() }
             };
 

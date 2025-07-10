@@ -10,16 +10,20 @@ namespace ProfileBot.Application.Profiles.Get
         public async Task<Result<GetProfileResult>> Handle(GetProfileQuery request, CancellationToken cancellationToken)
         {
             //TODO: Check if user is tracked for request.GuildId
-            var profile = await profileClient.GetProfileAsync(request.Username).ConfigureAwait(false);
+            var profileResult = await profileClient.GetProfileAsync(request.Username).ConfigureAwait(false);
 
-            if (profile is null)
+            if (profileResult.IsNotFound())
             {
                 return Result.NotFound($"Profile not found for RSN: {request.Username}!");
+            }
+            else if (profileResult.IsError())
+            {
+                return Result<GetProfileResult>.Error(new ErrorList(profileResult.Errors));
             }
 
             return Result.Success(new GetProfileResult()
             {
-                UserProfile = profile
+                UserProfile = profileResult
             });
         }
     }

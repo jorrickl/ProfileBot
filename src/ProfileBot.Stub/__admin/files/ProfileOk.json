@@ -8,99 +8,114 @@
   "ranged": 161914666,
   "activities": [
     {
-      "date": "20-Jun-2025 13:19",
-      "details": "I killed 8 Vindictas, all heavily armoured dragon riders.",
-      "text": "I killed 8 Vindictas."
-    },
-    {
-      "date": "20-Jun-2025 12:23",
-      "details": "While skilling, I found Gemi, the Crafting pet.",
-      "text": "I found Gemi, the Crafting pet."
-    },
-    {
-      "date": "20-Jun-2025 07:40",
-      "details": "I now have at least 40000000 experience points in the Crafting skill.",
-      "text": "40000000XP in Crafting"
-    },
-    {
-      "date": "20-Jun-2025 08:15",
-      "details": "I levelled my Invention skill, I am now level 80.",
-      "text": "Levelled up Invention."
-    },
-    {
-      "date": "09-Jun-2025 11:58",
-      "details": "I now have at least 34000000 experience points in the Cooking skill.",
-      "text": "34000000XP in Cooking"
-    },
-    {
-      "date": "01-Jun-2025 07:20",
-      "details": "I now have at least 32000000 experience points in the Cooking skill.",
-      "text": "32000000XP in Cooking"
-    },
-    {
-      "date": "01-Jun-2025 07:14",
-      "details": "I now have at least 82000000 experience points in the Fishing skill.",
-      "text": "82000000XP in Fishing"
-    },
-    {
-      "date": "17-May-2025 08:46",
-      "details": "I now have at least 108000000 experience points in the Thieving skill.",
-      "text": "108000000XP in Thieving"
-    },
-    {
-      "date": "17-May-2025 08:26",
-      "details": "I found a crystal triskelion fragment.",
-      "text": "I found a crystal triskelion fragment."
-    },
-    {
-      "date": "12-May-2025 18:41",
-      "details": "I now have at least 122000000 experience points in the Invention skill.",
-      "text": "122000000XP in Invention"
-    },
-    {
-      "date": "19-Apr-2025 14:30",
-      "details": "I helped reunite a lost duckling with her family, and learnt the philosophy of the duck along the way.",
-      "text": "Quest complete: Duck Quest"
-    },
-    {
-      "date": "07-Apr-2025 17:24",
-      "details": "I helped Leela overthrow her father and take control of Menaphos.",
-      "text": "Quest complete: Pharaoh's Folly"
-    },
-    {
-      "date": "08-Mar-2025 15:32",
+      "date": "30-Jun-2025 01:00",
       "details": "I killed 7 Vindictas, all heavily armoured dragon riders.",
       "text": "I killed 7 Vindictas."
     },
     {
-      "date": "17-Feb-2025 19:54",
+      "date": "30-Jun-2025 02:00",
       "details": "I defeated the Queen Black Dragon 1 time, returning her to a temporary slumber.",
       "text": "I defeated the Queen Black Dragon 1 time."
     },
     {
-      "date": "17-Feb-2025 19:51",
-      "details": "I killed  TzTok-Jad, and can now claim my fire cape.",
-      "text": "I killed  TzTok-Jad."
+      "date": "01-Jul-2025 01:00",
+      "details": "I now have at least 40000000 experience points in the Crafting skill.",
+      "text": "40000000XP in Crafting"
     },
     {
-      "date": "17-Feb-2025 19:38",
-      "details": "I now have at least 110000000 experience points in the Necromancy skill.",
-      "text": "110000000XP in Necromancy"
+      "date": "01-Jul-2025 02:00",
+      "details": "I now have at least 39000000 experience points in the Crafting skill.",
+      "text": "39000000XP in Crafting"
     },
     {
-      "date": "17-Feb-2025 19:38",
-      "details": "I killed 3 Ancient experimental dinosaurs: Rex Matriarchs.",
-      "text": "I killed 3 Rex Matriarchs."
+      "date": "02-Jul-2025 01:00",
+      "details": "I levelled my Invention skill, I am now level 89.",
+      "text": "Levelled up Invention."
     },
     {
-      "date": "17-Feb-2025 19:04",
+      "date": "02-Jul-2025 02:00",
+      "details": "I levelled my Invention skill, I am now level 90.",
+      "text": "Levelled up Invention."
+    },
+    {
+      "date": "02-Jul-2025 03:00",
+      "details": "I levelled my Invention skill, I am now level 99.",
+      "text": "Levelled up Invention."
+    },
+    {
+      "date": "02-Jul-2025 04:00",
+      "details": "I levelled my Invention skill, I am now level 120.",
+      "text": "Levelled up Invention."
+    },
+    {
+      "date": "03-Jul-2025 01:00",
+      "details": "I now have a total level of 1100, split among all my skills.",
+      "text": "1100 Total levels gained"
+    },
+    {
+      "date": "03-Jul-2025 02:00",
+      "details": "By levelling up my Necromancy skill, I achieved at least level 99 in all skills",
+      "text": "Levelled all skills over 99."
+    },
+    {
+      "date": "04-Jul-2025 01:00",
+      "details": "I visited Varrock Museum and took rightful ownership of my completionist cape.",
+      "text": "Bought my first completionist cape."
+    },
+    {
+      "date": "04-Jul-2025 02:00",
+      "details": "For the first time after training all skills to level 99, I bought a max cape.",
+      "text": "Bought my first max cape."
+    },
+    {
+      "date": "04-Jul-2025 03:00",
+      "details": "For the first time after training all skills to level 99, I bought a max cape.",
+      "text": "Bought my first Master Max cape."
+    },
+    {
+      "date": "04-Jul-2025 04:00",
+      "details": "After incredible effort, I unlocked the final enchantment of Dahmaroc for my completionist cape.",
+      "text": "Upgraded my completionist cape."
+    },
+    {
+      "date": "05-Jul-2025 01:00",
+      "details": "While skilling, I found Gemi, the Crafting pet.",
+      "text": "I found Gemi, the Crafting pet."
+    },
+    {
+      "date": "05-Jul-2025 02:00",
+      "details": "After opening a Dragonkin lamp, I unlocked Effy the effigy pet.",
+      "text": "Unlocked Effy the effigy pet."
+    },
+    {
+      "date": "05-Jul-2025 03:00",
+      "details": "After exchanging 100 zeal at soul wars, I adopted a pet TzRek-Jad, who then ate my fire cape.",
+      "text": "I adopted TzRek-Jad."
+    },
+    {
+      "date": "05-Jul-2025 04:00",
+      "details": "After killing a Edimmu, it dropped an Edimmu.",
+      "text": "I found an Edimmu"
+    },
+    {
+      "date": "06-Jul-2025 01:00",
       "details": "After killing a Pthentraken, it dropped a Savage spear cap.",
       "text": "I found a Savage spear cap"
     },
     {
-      "date": "17-Feb-2025 19:04",
-      "details": "I killed 4 Ancient experimental dinosaurs: Rex Matriarchs.",
-      "text": "I killed 4 Rex Matriarchs."
+      "date": "06-Jul-2025 02:00",
+      "details": "After killing a Helwyr, it dropped an Orb of the Cywir elders.",
+      "text": "I found an Orb of the Cywir elders"
+    },
+    {
+      "date": "06-Jul-2025 03:00",
+      "details": "I found a crystal triskelion fragment.",
+      "text": "I found a crystal triskelion fragment."
+    },
+    {
+      "date": "07-Jul-2025 01:00",
+      "details": "I helped reunite a lost duckling with her family, and learnt the philosophy of the duck along the way.",
+      "text": "Quest complete: Duck Quest"
     }
   ],
   "skillvalues": [
